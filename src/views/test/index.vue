@@ -2,24 +2,30 @@
   <div class="components-container">
     <split-pane split="vertical" @resize="resize">
       <template slot="paneL">
-        <div class="left-container">
-          <p>123</p>
-          <img src="../test/img.png">
-        </div>
+        <!--        <div class="left-container">-->
+        <el-col
+          :xs="{span: 24}"
+          :sm="{span: 18}"
+          :md="{span: 18}"
+          :lg="{span: 12}"
+          :xl="{span: 12}"
+          style="margin-bottom:30px;"
+        >
+          <box-card />
+        </el-col>
+        <!--        </div>-->
       </template>
       <template slot="paneR">
         <split-pane split="horizontal">
           <template slot="paneL">
-            <div class="top-container">
-              <p>456</p>
-              <img src="../test/img.png">
-            </div>
+            <!--            <div class="top-container">-->
+            <p>456</p>
+            <!--            </div>-->
           </template>
           <template slot="paneR">
-            <div class="bottom-container">
-              <p>789</p>
-              <img src="../test/img.png">
-            </div>
+            <!--            <div class="bottom-container">-->
+            <p>789</p>
+            <!--            </div>-->
           </template>
         </split-pane>
       </template>
@@ -29,10 +35,11 @@
 
 <script>
 import splitPane from 'vue-splitpane'
+import BoxCard from './BoxCard'
 
 export default {
   name: 'SplitpaneDemo',
-  components: { splitPane },
+  components: { splitPane, BoxCard },
   methods: {
     resize() {
       console.log('resize')
@@ -41,7 +48,7 @@ export default {
 }
 </script>
 
-<style  scoped>
+<style scoped>
 .components-container {
   position: relative;
   height: 100vh;

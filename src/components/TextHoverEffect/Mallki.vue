@@ -1,9 +1,11 @@
 <template>
-  <a :class="className" class="link--mallki" href="#">
-    {{ text }}
-    <span :data-letters="text" />
-    <span :data-letters="text" />
-  </a>
+  <div>
+    <a :class="className" class="link--mallki" href="#">
+      {{ text }}
+      <span :data-letters="text" />
+      <span :data-letters="text" />
+    </a>
+  </div>
 </template>
 
 <script>
@@ -33,7 +35,7 @@ export default {
   overflow: hidden;
   position: relative;
   display: inline-block;
-  line-height: 1;
+  line-height: 1.5;
   outline: none;
   text-decoration: none;
 }
